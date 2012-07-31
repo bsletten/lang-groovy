@@ -8,7 +8,7 @@ class HDSBuilderTests {
   void simpleHdsTreeSuccess() {
     def builder = new HDSBuilder()
 
-    def hds = builder.config {
+    def hds = new HDSBuilder().config {
       http {
         port 8080
         host "localhost"
