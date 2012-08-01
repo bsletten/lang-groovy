@@ -17,6 +17,16 @@ class HDSNodeImplDecorator {
       delegate.getChildren()
     }
     
+    metaClass.depthFirst = {
+      def xpathResult = []
+      HDSXPath.eval(xpathResult, delegate, "//*")
+      return xpathResult
+    }
+    
+    metaClass.name = {
+      delegate.getName()
+    }
+    
     metaClass.text = {
       delegate.getValue()
     }
